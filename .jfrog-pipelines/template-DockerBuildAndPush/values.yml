@@ -24,7 +24,7 @@ DockerBuild:
 
 DockerPush:
   name: app_image_push
-  targetRepository: templates-target-local
+  targetRepository: templates-docker-local
 
 BuildInfo:
   autoPublishBuildInfo: true
