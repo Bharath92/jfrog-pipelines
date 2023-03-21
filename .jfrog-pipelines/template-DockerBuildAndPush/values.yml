@@ -2,7 +2,7 @@ Pipeline:
   name: build_push_app
 
 GitRepo:
-  name: app_repo
+  name: app_git_repo
   gitProvider: bharathGithub
   path: bharath92/jfrog-pipelines
   branches:
@@ -11,7 +11,7 @@ GitRepo:
 artifactoryIntegration: myArtIntegration
 
 Image:
-  name: app_image
+  name: app_docker_image
   sourceRepository: foo
   autoPull: false
 
