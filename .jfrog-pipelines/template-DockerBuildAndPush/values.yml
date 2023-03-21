@@ -1,5 +1,5 @@
 Pipeline:
-  name: build_push_app
+  name: build_push_app_edgeverve
 
 GitRepo:
   name: app_git_repo
@@ -17,7 +17,7 @@ Image:
 
 DockerBuild:
   name: app_image_build
-  dockerImageName: stg-repo.jfrog.info/templates-docker-local/dbp
+  dockerImageName: stg-repo.jfrog.info/templates-docker-local/demo
   dockerFileName: Dockerfile
   dockerFileLocation: './.jfrog-pipelines/template-DockerBuildAndPush'
   dockerImageTag: ${run_number}
