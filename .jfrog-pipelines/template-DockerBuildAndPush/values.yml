@@ -1,8 +1,8 @@
 Pipeline:
-  name: docker_template
+  name: build_push_app
 
 GitRepo:
-  name: sampleRepo
+  name: app_repo
   gitProvider: bharathGithub
   path: bharath92/jfrog-pipelines
   branches:
@@ -11,21 +11,21 @@ GitRepo:
 artifactoryIntegration: myArtIntegration
 
 Image:
-  name: sampleImage
+  name: app_image
   sourceRepository: foo
   autoPull: false
 
 DockerBuild:
-  name: sampleBuild
+  name: app_image_build
   dockerImageName: stg-repo.jfrog.info/templates-docker-local/dbp
   dockerFileName: Dockerfile
   dockerFileLocation: './.jfrog-pipelines/template-DockerBuildAndPush'
   dockerImageTag: ${run_number}
 
 DockerPush:
-  name: samplePush
+  name: app_image_push
   targetRepository: templates-target-local
 
 BuildInfo:
   autoPublishBuildInfo: true
-  name: sampleBuildInfoDemo
+  name: image_build_info
