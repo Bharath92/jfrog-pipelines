@@ -3,8 +3,8 @@ Pipeline:
 
 GitRepo:
   name: sampleRepo
-  gitProvider: myGitIntegration
-  path: jfrog/jfrog-pipelines
+  gitProvider: bharathGithub
+  path: bharath92/jfrog-pipelines
   branches:
     include: {{gitBranch}}
 
@@ -17,7 +17,7 @@ Image:
 
 DockerBuild:
   name: sampleBuild
-  dockerImageName: pipelines.jfrog.io/templates-docker-local/dbp
+  dockerImageName: stg-repo.jfrog.info/templates-docker-local/dbp
   dockerFileName: Dockerfile
   dockerFileLocation: './.jfrog-pipelines/template-DockerBuildAndPush'
   dockerImageTag: ${run_number}
@@ -28,4 +28,4 @@ DockerPush:
 
 BuildInfo:
   autoPublishBuildInfo: true
-  name: sampleBuildInfo
+  name: sampleBuildInfoDemo
